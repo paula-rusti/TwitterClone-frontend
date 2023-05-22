@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar title="Cabins Inc">
+    <v-app-bar title="Twitter Inc">
       <v-btn>About Us</v-btn>
     </v-app-bar>
 <!--todo add side navbar-->

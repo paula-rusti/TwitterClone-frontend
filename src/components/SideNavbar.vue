@@ -9,7 +9,7 @@
       <v-list-item prepend-icon="mdi-bookmark-outline" title="Bookmarks" to="/owner/profile"></v-list-item>
       <v-list-item prepend-icon="mdi-list-box-outline" title="Lists" to="/owner/profile"></v-list-item>
       <v-list-item prepend-icon="mdi-account" title="Profile" to="/owner/profile"></v-list-item>
-      <v-list-item prepend-icon="mdi-more" title="More" to="/owner/profile"></v-list-item>
+      <v-list-item disabled="True" prepend-icon="mdi-more" title="More" to="/owner/profile"></v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
