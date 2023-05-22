@@ -1,41 +1,56 @@
 <template>
   <v-row>
-    <v-col cols="2"></v-col>
-    <v-col cols="8" class="mb-0 mt-5">
-      <div>
-        <new-tweet></new-tweet>
-      </div>
+    <v-col cols="7">
+      <v-row>
+        <v-col cols="12" class="mb-0 mt-5">
+          <div class="ml-5">
+            <new-tweet></new-tweet>
+          </div>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12">
+          <div>
+
+            <div
+              v-for="post in posts"
+              :key="post.id"
+              class="my-5"
+            >
+              <tweet-card></tweet-card>
+
+            </div>
+
+            <div v-if="loading" class="loading-spinner">
+              <!-- Show a loading spinner or loading indicator here -->
+            </div>
+          </div>
+        </v-col>
+      </v-row>
     </v-col>
-    <v-col cols="2"></v-col>
-  </v-row>
-  <v-row>
-    <v-col cols="12">
-      <div>
-
-        <div
-          v-for="post in posts"
-          :key="post.id"
-          class="my-5"
-        >
-          <tweet-card></tweet-card>
-
-        </div>
-
-        <div v-if="loading" class="loading-spinner">
-          <!-- Show a loading spinner or loading indicator here -->
-        </div>
+    <v-col cols="5">
+      <div class="mt-5 mr-15">
+        <search-box></search-box>
       </div>
+      <div class="pt-5 pr-10">
+        <trendings-card></trendings-card>
+      </div>
+      <div class="pt-5 pr-10">
+        <to-follow></to-follow>
+      </div>
+
     </v-col>
   </v-row>
-
-
 </template>
 
 <script>
 import TweetCard from "@/components/TweetCard";
 import NewTweet from "@/components/NewTweet";
+import SearchBox from "@/components/SearchBox";
+import TrendingsCard from "@/components/TrendingsCard";
+import ToFollow from "@/components/ToFollow";
 export default {
-  components: {NewTweet, TweetCard},
+  components: {ToFollow, TrendingsCard, SearchBox, NewTweet, TweetCard},
   data() {
     return {
       posts: [
